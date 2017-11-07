@@ -1,0 +1,112 @@
+<!-- start: MAIN GAME PAGE -->
+<div class="container-fluid container-fullw">
+    <div ng-controller="GameMainCtrl">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-white">
+
+                    <!-- START - LOADING PAGE EFFECT-->
+                    <div class="panel-body" ng-if="isLoading === true">
+                        <h5 class="over-title"> <span class="text-bold">Loading information...</span></h5>
+                        <p class="margin-bottom-30">
+                            please wait.
+                        </p>
+
+                        <div class="cssload-cssload-wrap2">
+                            <div class="cssload-wrap">
+                                <div class="cssload-overlay"></div>
+
+                                <div class="cssload-cogWheel cssload-one">
+                                    <div class="cssload-cog cssload-one"></div>
+                                    <div class="cssload-cog cssload-two"></div>
+                                    <div class="cssload-cog cssload-three"></div>
+                                    <div class="cssload-cog cssload-four"></div>
+                                    <div class="cssload-cog cssload-five"></div>
+                                    <div class="cssload-center"></div>
+                                </div>
+
+                                <div class="cssload-cogWheel cssload-two">
+                                    <div class="cssload-cog cssload-one"></div>
+                                    <div class="cssload-cog cssload-two"></div>
+                                    <div class="cssload-cog cssload-three"></div>
+                                    <div class="cssload-cog cssload-four"></div>
+                                    <div class="cssload-cog cssload-five"></div>
+                                    <div class="cssload-center"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                    <!-- END - LOADING PAGE EFFECT-->
+
+
+                    <div class="panel-body" ng-if="isLoading === false">
+                        <div class="row" ng-if="gameNotCteated === true">
+                            <div class="col-md-12">
+                                <div class="alert alert-block alert-info fade in">
+
+                                    <h4 class="alert-heading margin-bottom-10"><i class="ti-info"></i> Info!</h4>
+                                    <p class="margin-bottom-10">
+                                        Welcome to Minesweeper, to start a new game click the button below. If you have already played and you have a session saved, select it from the left menu to resume from the point you saved it.
+                                        <br/>Left click to reveal a cell, right click to plant a Flag where you think there is a mine. Game is over when revealing all cells not containing mines (win) or when revealing a mine (death).
+                                    </p>
+                                    <p>
+                                        <button type="button" class="btn btn-primary btn-lg" ng-click="createGame()">
+                                            Create New Game
+                                        </button>
+                                    </p>
+                                </div>    
+                            </div>
+                        </div>
+
+                        <div class="row" ng-if="gameNotCteated === false">
+
+                            <div class="col-md-12">
+
+                                <div class="alert alert-block alert-info fade in">
+
+                                    <h4 class="alert-heading  "><i class="ti-info"></i> Info!</h4>
+                                    <p class=" ">
+                                        Reveal all cells in board that are not containing mines to win the game!
+                                    </p>
+                                </div> 
+                            </div>  
+
+                            <div class="col-md-12">
+                                <div class="boardCell"  ng-class="{'lastRowCell' : ($index) % gameSize == 0, 'mineCell' : col.content == 'm'}"   ng-repeat="col in matrix">
+                                    <span ng-if="col.value !== 0"> {{col.value}}</span>
+                                    <div class="overCell"  ng-class="{'flagCell' : col.flaged === true}"  ng-if="col.status == 'hidden'" ng-click="showCellContent(col)"  ng-right-click="flag(col)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <br/>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 text-right pull-right ">
+
+                                <button ng-disabled="gameOver === true" ng-if="gameNotCteated === false && currentSesionId==0" ng-click="createGameSession()" type="button" class="btn btn-success btn-lg">
+                                    Save current game session
+                                </button>
+                                <button ng-disabled="gameOver === true" ng-if="gameNotCteated === false && currentSesionId!=0" ng-click="updateGameSession()" type="button" class="btn btn-success btn-lg">
+                                    Update current game session
+                                </button> 
+                                
+
+
+
+                                <button ng-if="gameOver === true" type="button" class="btn btn-primary btn-lg" ng-click="createGame()">
+                                    Create New Game
+                                </button>
+
+                            </div>  
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end: MAIN GAME PAGE -->

@@ -1,0 +1,54 @@
+<!-- start: MAIN NAVIGATION MENU -->
+<div class="navbar-title">
+    <span  >Main Menu</span>
+</div>
+<ul class="main-navigation-menu">
+        
+    <li ng-class="{'active open':$state.includes('app.ui')}">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <i class="fa fa-flask"></i>
+                </div>
+                <div class="item-inner">
+                    <span class="title" > Minesweeper </span><i class="icon-arrow"></i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu">
+          
+            <li ui-sref-active="active">
+                <a ui-sref="app.ui.game"> <span class="title" > New Game </span> </a>
+            </li>
+          
+        </ul>
+    </li>
+    
+    
+    
+        <li >
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <i class="fa fa-flask"></i>
+                </div>
+                <div class="item-inner" ng-click="reloadSaves()" >
+                    <span class="title"  > Show/update Saved Games </span>
+                </div>
+         
+            </div>
+        </a>
+        <ul class="sub-menu">
+ 
+            <li ng-repeat="game in savedGames" >
+                <a ng-click="showGameSession(game)"> <span class="title" > {{game[4]}}  </span> </a>
+            </li>
+          
+        </ul>
+    </li>
+    
+    
+    
+
+</ul>
+<!-- end: MAIN NAVIGATION MENU -->

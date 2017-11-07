@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteRule \.(css|jpe?g|gif|png|js|ico)$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+ErrorDocument 404 /404.php
