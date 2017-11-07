@@ -1,3 +1,7 @@
+# Code challenge requirrements here:
+http://c0880059.ferozo.com/CodeChallenge3.pdf
+
+
 # My project summary
 It works...
 
