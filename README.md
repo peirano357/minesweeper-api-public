@@ -1,4 +1,4 @@
-# Code challenge requirrements here:
+# Code challenge requirements here:
 http://c0880059.ferozo.com/CodeChallenge3.pdf
 
 
