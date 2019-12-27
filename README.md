@@ -1,6 +1,5 @@
 # Code challenge requirements here:
-http://c0880059.ferozo.com/CodeChallenge3.pdf
-
+http://dev2.innvatis.com/CodeChallenge3.pdf
 
 # My project summary
 It works...
