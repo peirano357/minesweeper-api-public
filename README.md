@@ -44,7 +44,7 @@ $include_url = $_SERVER['DOCUMENT_ROOT']."/";           // root physical path fo
 
 4 - get dependencies  using Bower - bower install (this will create a folder on the root, called "bower_components". If you don´t want to use it this way, you can get a zip file of this folder here: 
 
-http://dev3.innvatis.com/bower_components.zip
+http://dev33.innvatis.com/bower_components.zip
 
 5 - Everything should be working now. To navigate to the API endpoints and call the web services, in your Rest Client app (like Postman), make an HTTP Request to "http://MY_HOST_NAME_OR_IP/api/ENDPOINT_NAME"
 where "ENDPOINT_NAME" can be found in the API documentation on the .html file "APISpecificationDoc.html" on the root folder of this project.
@@ -52,7 +52,7 @@ where "ENDPOINT_NAME" can be found in the API documentation on the .html file "A
 ## Live Demo:
 You can see a live demo, wich has NOT been tested in mobile devices. You will have to create an account and after that, login to the webpage to be able to play game.
 
-Frontend URL: http://dev3.innvatis.com/
+Frontend URL: http://dev33.innvatis.com/
 
 Online API endpoints documentation:  
 http://dev3.innvatis.com/APISpecificationDoc.html
